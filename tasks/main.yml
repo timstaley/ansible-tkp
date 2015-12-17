@@ -1,2 +1,5 @@
 ---
-# tasks file for roletemplate
+# tasks file for tkp
+
+
+- include: tkp_install.yml tags=install

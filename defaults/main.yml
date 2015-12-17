@@ -1,2 +1,23 @@
 ---
-# defaults file for roletemplate
+# defaults file for tkp
+
+# Versioning
+tkp_version: "master"
+# This should be a simple string suitable for use as foldername, etc:
+tkp_version_shortname: "tkp-{{ tkp_version }}"
+
+#Code checkout directory:
+repo_dir: "/opt/repos"
+tkp_repo_path: "{{ repo_dir }}/{{ tkp_version_shortname }}/tkp"
+
+#And ownership (defaults to current login):
+tkp_deploy_user: "{{ ansible_user_id }}"
+
+#Install v-env directory:
+default_install_prefix: "/opt"
+tkp_venv: "{{ default_install_prefix }}/venvs/{{ tkp_version_shortname }}"
+
+# tkp config
+tkp_postgres_host: "localhost"
+tkp_postgres_username: "postgres"
+tkp_mongodb_host: "localhost"

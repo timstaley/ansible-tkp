@@ -1,0 +1,2 @@
+postgresql-client python-psycopg2 libpq-dev
+wcslib-dev

@@ -1,0 +1,11 @@
+- name: Install tkp apt dependencies.
+  apt: name={{item}} update_cache=yes cache_valid_time=600
+  with_items: "{{ lookup('file', 'tkp-apt-deps.txt').split() }}"
+  sudo: yes
+  tags: apt
+
+- name: Install tkp build-dependencies.
+  apt: name={{item}} state=build-dep
+  with_items: "{{ lookup('file', 'tkp-apt-build-deps.txt').split() }}"
+  sudo: yes
+  tags: apt
